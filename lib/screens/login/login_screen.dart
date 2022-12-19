@@ -45,14 +45,14 @@ class _LoginScreenState extends State<LoginScreen> {
           });
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text("Logged in successfully")));
-          Navigator.pushReplacementNamed(context, CTRoutes.home);
+          Navigator.pushReplacementNamed(context, CTRoutes.list_data);
         }
       } else {
         setState(() {
           isLoading = false;
         });
-//        ScaffoldMessenger.of(context).showSnackBar(
-//            SnackBar(content: Text("Invalid email or password")));
+       ScaffoldMessenger.of(context).showSnackBar(
+           SnackBar(content: Text("User not found")));
       }
     } catch (e) {
       print("CatchLogin $e");
