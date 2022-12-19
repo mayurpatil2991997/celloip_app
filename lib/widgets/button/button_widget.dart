@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ButtonWidget extends StatelessWidget {
   final String text;
-  final Function onTap;
+  final VoidCallback  onTap;
   final Color colorContainer;
   final Color colorText;
   const ButtonWidget({Key? key, required this.text, required this.onTap, required this.colorContainer, required this.colorText}) : super(key: key);
@@ -14,9 +14,7 @@ class ButtonWidget extends StatelessWidget {
       child: Container(
         height: 40.0,
         child: GestureDetector(
-          onTap: () {
-            onTap;
-          },
+          onTap: onTap,
           child: Container(
             decoration: BoxDecoration(
               // border: Border.all(

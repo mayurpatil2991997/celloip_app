@@ -1,5 +1,6 @@
 import 'package:celloip_task/core/routes.dart';
 import 'package:celloip_task/screens/home/home_screen.dart';
+import 'package:celloip_task/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         CTRoutes.home: (context) => const HomeScreen(),
+        CTRoutes.login: (context) => const LoginScreen(),
       },
       home: const HomeScreen(),
     );

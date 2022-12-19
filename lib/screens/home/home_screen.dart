@@ -219,7 +219,7 @@ class _HomeScreenState extends State<HomeScreen> {
                ButtonWidget(
                 text: "GET STARTED",
                 onTap: () {
-                  Navigator.pushNamed(context, CTRoutes.home);
+                  Navigator.pushReplacementNamed(context, CTRoutes.login);
                 },
                 colorContainer: const Color.fromRGBO(191, 219, 209, 1),
                 colorText: const Color.fromRGBO(19, 91, 70, 0.81),
