@@ -1,3 +1,4 @@
+import 'package:celloip_task/core/routes.dart';
 import 'package:celloip_task/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      routes: {
+        CTRoutes.home: (context) => const HomeScreen(),
+      },
       home: const HomeScreen(),
     );
   }

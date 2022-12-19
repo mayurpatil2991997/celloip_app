@@ -1,3 +1,4 @@
+import 'package:celloip_task/core/routes.dart';
 import 'package:celloip_task/widgets/button/button_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -217,7 +218,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
                ButtonWidget(
                 text: "GET STARTED",
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, CTRoutes.home);
+                },
                 colorContainer: const Color.fromRGBO(191, 219, 209, 1),
                 colorText: const Color.fromRGBO(19, 91, 70, 0.81),
               ),
