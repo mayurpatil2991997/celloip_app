@@ -17,11 +17,6 @@ class ButtonWidget extends StatelessWidget {
           onTap: onTap,
           child: Container(
             decoration: BoxDecoration(
-              // border: Border.all(
-              //   color: Color(0xFFF05A22),
-              //   style: BorderStyle.solid,
-              //   width: 1.0,
-              // ),
               color: colorContainer,
               borderRadius: BorderRadius.circular(30.0),
             ),
