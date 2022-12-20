@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
     try {
 
       final response = await http.post(
-        Uri.parse('${BaseUrl.LoginUrl}/login'),
+        Uri.parse('${BaseUrl.Url}/login'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
@@ -233,6 +233,7 @@ class _LoginScreenState extends State<LoginScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 50.0),
       child: TextFormField(
         controller: passwordController,
+        obscureText: true,
         validator: (value) {
           if (value == null) {
             return 'Please Enter Password';

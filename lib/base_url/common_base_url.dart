@@ -1,3 +1,3 @@
 class BaseUrl {
- static String LoginUrl = "https://reqres.in/api";
+ static String Url = "https://reqres.in/api";
 }

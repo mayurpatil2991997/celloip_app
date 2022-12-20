@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         CTRoutes.login: (context) => const LoginScreen(),
         CTRoutes.list_data: (context) => const ListScreen(),
       },
-      home: const HomeScreen(),
+      home: const ListScreen(),
     );
   }
 }
