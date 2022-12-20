@@ -117,37 +117,40 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(
                     height: 10.0,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/tc.png',
-                        width: 20.0,
-                        height: 10.0,
-                        color: Colors.black,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            "By signing up, you will declare that you read and ",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 8.0,
-                              // fontWeight: FontWeight.w500
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          'assets/images/tc.png',
+                          width: 20.0,
+                          height: 10.0,
+                          color: Colors.black,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              "By signing up, you will declare that you read and ",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 8.0,
+                                // fontWeight: FontWeight.w500
+                              ),
                             ),
-                          ),
-                          Text(
-                            "understand the Smartr Services Agreement.",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 8.0,
-                              // fontWeight: FontWeight.w500
+                            Text(
+                              "understand the Smartr Services Agreement.",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 8.0,
+                                // fontWeight: FontWeight.w500
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 26.0,
@@ -222,6 +225,7 @@ class _LoginScreenState extends State<LoginScreen> {
               borderRadius: BorderRadius.circular(30.0),
             ),
             filled: true,
+            contentPadding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
             hintStyle: TextStyle(color: Colors.grey[800]),
             hintText: "Enter Email",
             fillColor: Colors.white70),
@@ -249,6 +253,7 @@ class _LoginScreenState extends State<LoginScreen> {
               borderRadius: BorderRadius.circular(30.0),
             ),
             filled: true,
+            contentPadding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
             hintStyle: TextStyle(color: Colors.grey[800]),
             hintText: "Enter Password",
             fillColor: Colors.white70),
