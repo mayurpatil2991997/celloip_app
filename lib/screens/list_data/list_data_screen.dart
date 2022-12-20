@@ -17,6 +17,7 @@ class _ListScreenState extends State<ListScreen> {
   TextEditingController searchController = TextEditingController();
   DataModel listData;
 
+  // API Call Function
   Future<DataModel> displaydata() async {
     try {
       final response = await http.get(
@@ -29,15 +30,13 @@ class _ListScreenState extends State<ListScreen> {
 
       if (response.statusCode == 200) {
         var responseJson = json.decode(response.body);
-        print("TagsResponse $responseJson");
         listData = DataModel.fromJson(responseJson);
         return listData;
       }
-    } catch (e) {
-      print("TagsResponseCatchError $e");
-    }
+    } catch (e) {}
   }
 
+  // Build Method
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,10 +78,10 @@ class _ListScreenState extends State<ListScreen> {
               SizedBox(
                 height: 14.0,
               ),
+              // Future
               FutureBuilder<DataModel>(
                 future: displaydata(),
                 builder: (context, snapShot) {
-                  print("Future");
                   if (snapShot.hasData) {
                     return customCard(snapShot.data);
                   } else if (snapShot.hasError) {
@@ -104,7 +103,7 @@ class _ListScreenState extends State<ListScreen> {
       ),
     );
   }
-
+// SearchBar
   Widget searchWidget() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -138,6 +137,8 @@ class _ListScreenState extends State<ListScreen> {
     );
   }
 
+
+  // CustomCard Widget
   Widget customCard(DataModel item) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;

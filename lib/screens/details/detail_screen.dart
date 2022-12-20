@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({Key key}) : super(key: key);
 
+  // Build Method
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -236,6 +237,8 @@ class DetailsScreen extends StatelessWidget {
               SizedBox(
                 height: 30.0,
               ),
+
+              // Custom Button
               ButtonWidget(
                 text: "Apply Now",
                 onTap: () {},

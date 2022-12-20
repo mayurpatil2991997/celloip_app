@@ -21,6 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool isLoading = false;
   final _formKey = GlobalKey<FormState>();
 
+  // API Call Function
   Future<LoginModel> login(
       String email, String password, BuildContext context) async {
     try {
@@ -38,7 +39,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
       if (response.statusCode == 200) {
         var responseJson = json.decode(response.body);
-        print("LoginREsponseeee $responseJson");
         if (responseJson['token'] != null) {
           setState(() {
             isLoading = false;
@@ -55,7 +55,6 @@ class _LoginScreenState extends State<LoginScreen> {
            SnackBar(content: Text("User not found")));
       }
     } catch (e) {
-      print("CatchLogin $e");
       setState(() {
         isLoading = false;
       });
@@ -63,6 +62,8 @@ class _LoginScreenState extends State<LoginScreen> {
           .showSnackBar(SnackBar(content: Text("Invalid email or password")));
     }
   }
+
+  // Build Method
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -179,6 +180,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     height: 14.0,
                   ),
+
+                  // Custom Button
                   ButtonWidget(
                     text: "GET STARTED",
                     onTap: () async {
@@ -204,6 +207,8 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
+  // Email Widget
   Widget emailWidget() {
     Pattern pattern =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
@@ -232,6 +237,8 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
+  // Password Widget
   Widget passwordWidget() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 50.0),
@@ -261,6 +268,8 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+
+// Pain Class
 
 class CurvePainter extends CustomPainter {
   @override

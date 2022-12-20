@@ -10,6 +10,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  // Build Method
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -43,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 24.0,
               ),
+              // Circular Image
               const CircleAvatar(
                 // radius : 20.0,
                 backgroundImage: AssetImage(
@@ -216,6 +219,8 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 10.0,
               ),
+
+               // Custom Button
                ButtonWidget(
                 text: "GET STARTED",
                 onTap: () {
