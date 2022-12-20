@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:celloip_task/base_url/common_base_url.dart';
+import 'package:celloip_task/core/routes.dart';
 import 'package:celloip_task/model/data/data_model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -94,7 +95,7 @@ class _ListScreenState extends State<ListScreen> {
                           ),
                         ));
                   }
-                  return CircularProgressIndicator();
+                  return Center(child: CircularProgressIndicator());
                 },
               ),
             ],
@@ -147,82 +148,87 @@ class _ListScreenState extends State<ListScreen> {
           shrinkWrap: true,
           itemCount: item.data.length,
           itemBuilder: (BuildContext context, index) {
-            return Container(
-              padding: const EdgeInsets.all(16.0),
-              margin: EdgeInsets.all(4.0),
-              alignment: Alignment.topLeft,
-              // height: height * 0.15,
-              width: width * 1,
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(24))),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.transparent,
-                        child: ClipOval(
-                          child: Image.network(
-                            item.data[index].avatar
+            return GestureDetector(
+              onTap: () {
+                Navigator.pushReplacementNamed(context, CTRoutes.details);
+              },
+              child: Container(
+                padding: const EdgeInsets.all(16.0),
+                margin: EdgeInsets.all(4.0),
+                alignment: Alignment.topLeft,
+                // height: height * 0.15,
+                width: width * 1,
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(24))),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.transparent,
+                          child: ClipOval(
+                            child: Image.network(
+                              item.data[index].avatar
+                            ),
                           ),
+                          radius: 18.0,
                         ),
-                        radius: 18.0,
-                      ),
-                      const SizedBox(
-                        width: 10.0,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                item.data[index].firstName,
-                                style: TextStyle(
-                                    color: Color.fromRGBO(13, 13, 13, 1),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12.0),
-                              ),
-                              SizedBox(
-                                width: 6.0,
-                              ),
-                              Text(
-                                item.data[index].lastName,
-                                style: TextStyle(
-                                    color: Color.fromRGBO(13, 13, 13, 1),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12.0),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 2.0,
-                          ),
-                          Text(
-                            item.data[index].email,
-                            style: TextStyle(
-                                color: Color.fromRGBO(67, 69, 69, 1),
-                                fontWeight: FontWeight.bold,
-                                fontSize: 10.0),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const Chip(
-                    elevation: 0,
-                    // padding: EdgeInsets.all(8),
-                    backgroundColor: Color.fromRGBO(191, 218, 208, 1),
-                    shadowColor: Colors.black,
-                    label: Text(
-                      'Celloip',
-                      style: TextStyle(fontSize: 10),
-                    ), //Text
-                  ),
-                ],
+                        const SizedBox(
+                          width: 10.0,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  item.data[index].firstName,
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(13, 13, 13, 1),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0),
+                                ),
+                                SizedBox(
+                                  width: 6.0,
+                                ),
+                                Text(
+                                  item.data[index].lastName,
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(13, 13, 13, 1),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 2.0,
+                            ),
+                            Text(
+                              item.data[index].email,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(67, 69, 69, 1),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 10.0),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const Chip(
+                      elevation: 0,
+                      // padding: EdgeInsets.all(8),
+                      backgroundColor: Color.fromRGBO(191, 218, 208, 1),
+                      shadowColor: Colors.black,
+                      label: Text(
+                        'Celloip',
+                        style: TextStyle(fontSize: 10),
+                      ), //Text
+                    ),
+                  ],
+                ),
               ),
             );
           }),
