@@ -1,3 +1,4 @@
+import 'package:celloip_task/core/routes.dart';
 import 'package:celloip_task/widgets/button/button_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -16,9 +17,14 @@ class DetailsScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.asset(
-                    'assets/images/back.png',
-                    width: 30.0,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, CTRoutes.list_data);
+                    },
+                    child: Image.asset(
+                      'assets/images/back.png',
+                      width: 30.0,
+                    ),
                   ),
                   Icon(Icons.favorite),
                 ],
